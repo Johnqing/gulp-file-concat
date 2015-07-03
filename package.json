@@ -1,10 +1,11 @@
 {
   "name": "gulp-file-concat",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "cancat css/js",
   "keywords": [
-    "gulpplugin",
-    "cancat",
+    "gulp plugin",
+    "gulp-file-concat",
+    "concat",
     "css",
     "js"
   ],
@@ -22,8 +23,9 @@
     "node": ">= 0.9"
   },
   "dependencies": {
-	  "gulp-util": "^2.2.5",
-	  "through2": ">=0.6.1"
+    "glob": "^5.0.13",
+    "gulp-util": "^2.2.5",
+    "through2": ">=0.6.1"
   },
   "devDependencies": {},
   "license": "MIT",

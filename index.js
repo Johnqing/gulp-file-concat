@@ -5,6 +5,8 @@ var Buffer = require('buffer').Buffer;
 var path = require('path');
 var fs = require('fs');
 var File = gutil.File;
+var glob = require("glob");
+
 
 var regx_js = /\s*<script.*[^'|"]+['|"]([^'|"]*\.js)['|"].*/i
 
@@ -15,7 +17,7 @@ function jsContent(fileContent, options){
 		var jsFileArr = jsFile.match(regx_js);
 		if(!jsFileArr) return
 		var filePath = path.join(options.relativeUrls, jsFileArr[1]);
-		var content = fs.readFileSync(filePath).toString();
+		var content = glob.sync(filePath).toString();
 		contentArr.push(content);
 	});
 	return contentArr.join(';')
