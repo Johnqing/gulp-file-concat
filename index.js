@@ -17,7 +17,8 @@ function jsContent(fileContent, options){
 		var jsFileArr = jsFile.match(regx_js);
 		if(!jsFileArr) return
 		var filePath = path.join(options.relativeUrls, jsFileArr[1]);
-		var content = glob.sync(filePath).toString();
+        filePath = glob.sync(filePath).toString();
+		var content = fs.readFileSync(filePath).toString();
 		contentArr.push(content);
 	});
 	return contentArr.join(';')
